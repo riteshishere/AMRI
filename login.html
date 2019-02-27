@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    background-image:url("img/texture.jpg");
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=date], textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus, textarea  :focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/*login SignUp Button*/
+.btn{
+	padding: 50px;
+	font-size: 20px;
+	border-radius: 50%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.cancel_btn_half {
+  float: left;
+  width: 50%;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.signupbtn {
+  float: left;
+  width: 50%;
+  padding: 10px 18px;
+  background-color: #4CAF50;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw,
+span.spsw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw
+  span.spsw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn,
+  .signupbtn,
+  .cancel_btn_half {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<center>
+<h2>Please SignUp Before Login Here</h2>
+<div style="margin-top: 10%">
+<button class="btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+</div>
+</center>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="php/login.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" maxlength="50" required>
+
+      <label for="lpsw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="lpsw" maxlength="30" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+<center>
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+</center>
+<div id="id02" class="modal">
+  <form class="modal-content animate" action="php/signup.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="fname"><b>Full Name</b><span style="color:#F00">*</span></label>
+      <input type="text" placeholder="Enter Full Name" name="fname" maxlength="30" required>
+
+      <div style="padding-top:20px;">
+              <b>Gender</b>
+              <span style="color:#F00">*</span> :
+              <select name="gender" id="gender">
+                  <option value="-select-">-select-</option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+              </select>
+      </div>
+      <br>
+
+      <label for="area"><b>Address</b><span style="color:#F00">*</span></label>
+      <textarea style="width:100%;" rows="3"  cols="30" maxlength="300" name="area"> </textarea>
+
+      <label for="dob"><b>Date Of Birth</b><span style="color:#F00">*</span></label>
+      <input type="Date" name="dob" min="1950-01-01" max="2020-12-31" id="dob">
+      <script type="text/javascript">
+        dob.max = new Date().toISOString().split("T")[0];
+      </script>
+
+      <label for="pin"><b>Pincode</b><span style="color:#F00">*</span></label>
+      <input type="text" placeholder="Enter Pin" name="pin" maxlength="6" required>    
+
+
+      <div style="padding-top:20px;">
+            <label for="state"><b>State</b><span style="color:#F00">*</span></label>
+                      <select name="state" id="state">
+                          <option value="sl">-select-</option>
+                          <option value="AP">Andhra Pradesh (AP)</option>
+                          <option value="AR">Arunachal Pradesh (AR)</option>
+                          <option value="AS">Assam (AS)</option>
+                          <option value="BR">Bihar (BR)</option>
+                          <option value="CG">Chhattisgarh (CG)</option>
+                          <option value="GA">Goa (GA)</option>
+                          <option value="GJ">Gujarat (GJ)</option>
+                          <option value="HR">Haryana (HR)</option>
+                          <option value="HP">Himachal Pradesh (HP)</option>
+                          <option value="JK">Jammu and Kashmir (JK)</option>
+                          <option value="JH">Jharkhand (JH)</option>
+                          <option value="KA">Karnataka (KA)</option>
+                          <option value="KL">Kerala (KL)</option>
+                          <option value="MP">Madhya Pradesh (MP)</option>
+                          <option value="MH">Maharashtra (MH)</option>
+                          <option value="MN">Manipur (MN)</option>
+                          <option value="ML">Meghalaya (ML)</option>
+                          <option value="MZ">Mizoram (MZ)</option>
+                          <option value="NL">Nagaland (NL)</option>
+                          <option value="OD">Odisha(OD)</option>
+                          <option value="PB">Punjab (PB)</option>
+                          <option value="RJ">Rajasthan (RJ)</option>
+                          <option value="SK">Sikkim (SK)</option>
+                          <option value="TN">Tamil Nadu (TN)</option>
+                          <option value="TR">Tripura (TR)</option>
+                          <option value="TG">Telangana (TG)</option>
+                          <option value="UP">Uttar Pradesh (UP)</option>
+                          <option value="UK">Uttarakhand (UK)</option>
+                          <option value="WB">West Bengal (WB)</option>
+                      </select>
+      </div>
+      <br>
+  
+
+      <label for="email"><b>Email</b><span style="color:#F00">*</span></label>
+      <input type="text" placeholder="Enter Email" name="email" maxlength="50" required>
+
+      <label for="psw"><b>Password</b><span style="color:#F00">*</span></label>
+      <input type="password" placeholder="Enter Password" name="psw" maxlength="30" required>
+
+      <label for="psw_repeat"><b>Repeat Password</b><span style="color:#F00">*</span></label>
+      <input type="password" placeholder="Repeat Password" name="psw_repeat" maxlength="50" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancel_btn_half">Cancel</button>
+        <button type="submit" name="signup" class="signupbtn" >SignUp</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+var modal1 = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+
+}
+    
+
+</script>
+
+</body>
+</html>
